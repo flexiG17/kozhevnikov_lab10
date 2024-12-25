@@ -27,6 +27,22 @@ public class ApacheCommonsExample {
         return file;
     }
 
+    public long getFileSize() {
+        return FileUtils.sizeOf(file);
+    }
+
+
+    public long getLastModified() {
+        long lastModified = 0;
+        try {
+            lastModified = FileUtils.lastModified(file);
+        }
+        catch (Exception e) {
+            System.err.println("Ошибка при работе с файлом: " + e.getMessage());
+        }
+        return lastModified;
+    }
+
     @Override
     public String toString() {
         String content =file.getName();

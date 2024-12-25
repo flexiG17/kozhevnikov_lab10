@@ -1,23 +1,28 @@
 package ApacheCommonsExample;
 
+import org.apache.commons.io.FileUtils;
+
 import java.io.IOException;
 import java.util.List;
 
 public class Main {
     
     public static void main(String[] args) throws IOException {
-        ApacheCommonsExample apacheCommonExample = new ApacheCommonsExample("src/main/java/ApacheCommonsExample/text.txt");
+        ApacheCommonsExample apacheCommonExampleFile = new ApacheCommonsExample("src/main/java/ApacheCommonsExample/text.txt");
 
-        apacheCommonExample.writeSingleLineToFile("Я искал твою тень\n");
-        apacheCommonExample.writeSingleLineToFile("Среди каменных стен\n");
+        apacheCommonExampleFile.writeSingleLineToFile("Я искал твою тень\n");
+        apacheCommonExampleFile.writeSingleLineToFile("Среди каменных стен\n");
 
         List<String> firstVerseEnd = List.of("Нет! Я цеплялся за свет", "В темноте\n");
-        apacheCommonExample.writeLinesListToFile(firstVerseEnd);
+        apacheCommonExampleFile.writeLinesListToFile(firstVerseEnd);
 
         List<String> secondVerseStart = List.of("Я звонил и бросал", "я писал и стирал", "Я бежал за тобой", "по знакомым следам");
-        apacheCommonExample.writeLinesListToFile(secondVerseStart);
+        apacheCommonExampleFile.writeLinesListToFile(secondVerseStart);
 
         System.out.println("Содержимое файла: ");
-        System.out.println(apacheCommonExample);
+        System.out.println(apacheCommonExampleFile);
+
+        System.out.println("Размер файла: " + apacheCommonExampleFile.getFileSize());
+        System.out.println("Последнее изменение: " + apacheCommonExampleFile.getLastModified());
     }
 }
