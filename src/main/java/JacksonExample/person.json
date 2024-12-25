@@ -1,0 +1,16 @@
+{
+  "name": "Максим",
+  "age": 25,
+  "relatives": [
+    {
+      "name": "Андрей",
+      "age": 60,
+      "relatives": null
+    },
+    {
+      "name": "Ирина",
+      "age": 55,
+      "relatives": null
+    }
+  ]
+}
